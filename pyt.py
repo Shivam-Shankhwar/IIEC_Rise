@@ -1,5 +1,7 @@
+#Modules needed
 import os
 import pyttsx3
+import subprocess
 
 #pyttsx3 Engine Setup
 engine = pyttsx3.init()
@@ -19,6 +21,8 @@ print('1. Notepad ')
 print('2. Paint')
 print('3. Cmd')
 print('4. Calculator')
+print('6. Google')
+print('7. Vlc')
 print('5. Exit\n')
 
 #Main driving code
@@ -30,14 +34,14 @@ while True:
     
     if(('notepad' in p) or ('Notepad' in p)) and not(any(i in p.split() for i in dont_run)):
         os.system('notepad')
-        print('Excellent, tell me more to do ...\n')
-        engine.say('Excellent, tell me more to do')
+        print('I see, something important to write...\n')
+        engine.say('I see, you have something important to write')
         engine.runAndWait()
      
     elif(('paint' in p) or ('Paint' in p)) and not(any(i in p.split() for i in dont_run)):
         os.system('mspaint')
-        print('Cool, tell me more ...\n') 
-        engine.say('Cool, tell me more')
+        print('Unleash your imagination ...\n') 
+        engine.say('Unleash your imagination')
         engine.runAndWait()
     
     elif(('calculator' in p) or ('Calculator' in p)) and not(any(i in p.split() for i in dont_run)):
@@ -52,6 +56,18 @@ while True:
         engine.say('Excellent, tell me more to do')
         engine.runAndWait()
     
+    elif(('Google' in p) or ('google' in p)) and not(any(i in p.split() for i in dont_run)):
+        subprocess.Popen([r'C:\Program Files\Internet Explorer\\iexplore.exe', 'www.google.co.in'])
+        print('Want something to search ...\n')
+        engine.say('Done searching !')
+        engine.runAndWait()
+        
+    elif(('vlc' in p) or ('Vlc' in p)) and not(any(i in p.split() for i in dont_run)):
+        subprocess.call([r'C:\Program Files\VideoLAN\VLC\\vlc.exe'])
+        print('which movie are you gonna watch ...\n')
+        engine.say('Which movie are you gonna watch')
+        engine.runAndWait()
+        
     elif('Exit' in p) or ('exit' in p):
         print('')
         break
@@ -70,5 +86,6 @@ while True:
 print('----So Long, see you soon.----')   
 engine.say('So Long, see you soon')
 engine.runAndWait()
+
 
 
