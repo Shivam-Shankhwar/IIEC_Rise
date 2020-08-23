@@ -17,13 +17,13 @@ dont_run = ['dont', 'no need', 'noneed', 'donot', 'don\'t', 'not',  'No Need', '
 print('Hello, what would you like me to do sir ?')
 engine.say('Hello, what would you like me to do sir ?')
 engine.runAndWait()
-print('1. Notepad ')
-print('2. Paint')
-print('3. Cmd')
-print('4. Calculator')
-print('6. Google')
-print('7. Vlc')
-print('5. Exit\n')
+print('- Notepad ')
+print('- Paint')
+print('- Cmd')
+print('- Calculator')
+print('- Google')
+print('- Vlc')
+print('- Exit\n')
 
 #Main driving code
 while True:
